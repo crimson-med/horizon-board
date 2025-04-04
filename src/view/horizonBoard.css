@@ -1,0 +1,129 @@
+body {
+  font-family: var(--vscode-font-family);
+  background-color: var(--horizon-pageBg);
+  color: var(--vscode-foreground);
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-header {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--vscode-panel-border);
+  cursor: pointer;
+  background-color: var(--horizon-header);
+  color: var(--horizon-headerText);
+}
+
+.board-header h1 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: normal;
+  color: var(--horizon-headerText);
+}
+
+.horizon-board {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.horizon-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 0 10px;
+  background-color: var(--horizon-columnBg);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+
+.horizon-column h2 {
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  background-color: var(--horizon-column);
+  color: var(--horizon-columnText);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 16px;
+}
+
+.horizon-items {
+  padding: 10px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.story-item {
+  background-color: var(--horizon-cardBg);
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.story-item:hover {
+  background-color: var(--horizon-cardBgHover);
+}
+
+.story-item.dragging {
+  opacity: 0.6;
+  cursor: grabbing;
+}
+
+.horizon-items.drag-over {
+  background-color: var(--vscode-editor-hoverHighlightBackground);
+  border: 2px dashed var(--vscode-focusBorder);
+}
+
+.story-id {
+  font-size: 0.8em;
+  color: var(--horizon-storyId);
+}
+
+.story-title {
+  font-weight: 500;
+  color: var(--horizon-storyText);
+}
+
+.empty-message {
+  color: var(--vscode-disabledForeground);
+  text-align: center;
+  padding: 20px 0;
+  font-style: italic;
+}
+
+/* Notifications */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  color: white;
+  background-color: #2c3e50;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.notification.error {
+  background-color: #e74c3c;
+}
+
+.notification.success {
+  background-color: #2ecc71;
+}
+
+.notification.fade-out {
+  opacity: 0;
+}

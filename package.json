@@ -1,0 +1,75 @@
+{
+  "name": "vscode-horizon-board",
+  "displayName": "Horizon Board",
+  "description": "A customizable story management board for organizing and tracking your development tasks",
+  "version": "0.0.1",
+  "publisher": "medericburlet",
+  "icon": "resources/horizon.png",
+  "galleryBanner": {
+    "color": "#3D3D3D",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/vscode-horizon-board.git"
+  },
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization",
+    "Snippets"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "horizon-board",
+          "title": "Horizon Board",
+          "icon": "resources/horizon-icon.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "horizonBoard.openBoard",
+        "title": "Open Horizon Board"
+      },
+      {
+        "command": "horizonBoard.refresh",
+        "title": "Refresh Horizon Board"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kanban",
+    "board",
+    "productivity",
+    "stories",
+    "tasks",
+    "organization",
+    "project management",
+    "agile",
+    "scrum",
+    "drag and drop",
+    "theme"
+  ],
+  "author": "Burlet Mederic <mederic.burlet@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^22.13.17",
+    "@types/vscode": "^1.98.0",
+    "typescript": "^5.8.2",
+    "vscode-test": "^1.6.1"
+  }
+}
